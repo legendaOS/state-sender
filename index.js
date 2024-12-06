@@ -53,8 +53,6 @@ async function getStates() {
         let state = element?.attachments.find((el) => el?.type == "link")
         if (state) {
 
-            console.log(element)
-
             let link = state?.link
             states.push({
                 title: link?.title,
@@ -74,8 +72,6 @@ async function sendStates() {
     let all_states = await getStates()
 
     all_states = all_states.sort((a,b) => a?.id - b?.id)
-
-    console.log(all_states)
 
     for(let state of all_states){
 
